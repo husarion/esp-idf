@@ -505,7 +505,7 @@ dns_init_local(void)
  *         IPADDR_NONE if not found.
  * @return ERR_OK if found, ERR_ARG if not found
  */
-static err_t
+err_t
 dns_lookup_local(const char *hostname, ip_addr_t *addr LWIP_DNS_ADDRTYPE_ARG(u8_t dns_addrtype))
 {
 #if DNS_LOCAL_HOSTLIST_IS_DYNAMIC

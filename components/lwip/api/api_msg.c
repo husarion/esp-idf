@@ -1293,6 +1293,7 @@ lwip_netconn_do_connect(void *m)
         setup_tcp(msg->conn);
         msg->err = tcp_connect(msg->conn->pcb.tcp, API_EXPR_REF(msg->msg.bc.ipaddr),
           msg->msg.bc.port, lwip_netconn_do_connected);
+
         if (msg->err == ERR_OK) {
           u8_t non_blocking = netconn_is_nonblocking(msg->conn);
           msg->conn->state = NETCONN_CONNECT;
